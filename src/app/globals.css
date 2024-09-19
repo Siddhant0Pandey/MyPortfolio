@@ -1,17 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #201e1f;
+  --foreground: #ffffff;
+  --accent: #5fdd9d;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.container {
+  width: 80vw;
+  margin: 0 auto;
 }
 
 body {
@@ -24,4 +25,64 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.link_detail {
+  position: relative;
+}
+
+.link_detail::before {
+  background-color: var(--accent);
+  font-size: 17px;
+  padding: 1rem 0rem 1rem 0rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  position: absolute;
+  right: 2rem;
+  z-index: -1;
+}
+
+.link_detail:hover::before {
+  animation: expand 0.4s ease-in-out forwards;
+  content: "Home";
+}
+
+@keyframes expand {
+  from {
+    padding: 1rem 0rem 1rem 0rem;
+  }
+  to {
+    padding: 1rem 1.6rem 1rem 3rem;
+  }
+}
+
+.webdeveloper {
+  display: inline-block;
+  position: relative;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: blink 1s infinite step-start;
+}
+
+@keyframes blink {
+  50% {
+    background: transparent;
+  }
+}
+
+li {
+  list-style: none;
 }
