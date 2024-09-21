@@ -20,7 +20,7 @@ function NavBarSection() {
     console.log("mouse entered");
   }
   return (
-    <nav className="absolute right-2 top-[20%] ">
+    <nav className="fixed right-2 top-[20%] ">
       <div className="flex flex-col items-center gap-7 ">
         <Link href={"/"} onMouseEnter={handleMouseEnter}>
           <div className="flex flex-row-reverse items-center link_detail">
