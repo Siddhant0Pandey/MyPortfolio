@@ -32,16 +32,16 @@ function Hero() {
         {
           y: -120,
           opacity: 0,
-          scrollTrigger: {
-            trigger: ".point",
-            toggleActions: "restart none reverse pause",
-          },
         },
         {
           y: 0,
           opacity: 1,
           duration: 2,
           ease: "bounce",
+          scrollTrigger: {
+            trigger: ".point",
+            toggleActions: "restart none restart none",
+          },
         }
       );
 
@@ -54,10 +54,27 @@ function Hero() {
           y: 0,
           duration: 1,
           ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: ".my_name",
+            toggleActions: "restart none restart none",
+          },
         }
       );
 
-      gsap.fromTo(".intro", { y: 100 }, { y: 0, ease: "power1.inOut" });
+      gsap.fromTo(
+        ".intro",
+        {
+          y: 100,
+        },
+        {
+          y: 0,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: ".intro",
+            toggleActions: "restart none restart none",
+          },
+        }
+      );
 
       gsap.fromTo(
         ".profession",
@@ -67,6 +84,10 @@ function Hero() {
           y: 0,
           duration: 1,
           ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: ".profession",
+            toggleActions: "restart none restart none",
+          },
         }
       );
     },

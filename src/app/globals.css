@@ -130,3 +130,29 @@ li {
     transform: translateY(0px);
   }
 }
+
+@media (max-width: 768px) {
+  /* .draggable-icon {
+    width: 72px;
+    height: 72px;
+    font-size: 40px;
+  }
+  .draggableIcon_mobile > div {
+    color: red;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  /* .draggable-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } */
+  .skill_p {
+    display: none;
+  }
+}

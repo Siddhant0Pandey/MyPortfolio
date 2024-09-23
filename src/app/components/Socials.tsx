@@ -24,6 +24,10 @@ function Socials() {
         ease: "power2.out",
         scale: 1,
         x: 0,
+        scrollTrigger: {
+          trigger: ".socials li",
+          toggleActions: "restart none restart none",
+        },
       }
     );
   }, []);
