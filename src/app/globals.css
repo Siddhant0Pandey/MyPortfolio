@@ -163,3 +163,9 @@ li {
   z-index: 50;
   transition: grid-template-rows 2000ms ease-in;
 } */
+.project_style:hover .project_style_title {
+  display: none;
+}
+.project_style:hover .project_style_description {
+  opacity: 0.8;
+}
