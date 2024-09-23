@@ -105,6 +105,8 @@ li {
   /* color: var(--accent);
    
   */
+  scale: 1.1;
+  transition: scale 0.4s ease-in-out;
   color: white;
 }
 .draggable-icon:hover::after {
@@ -156,3 +158,8 @@ li {
     display: none;
   }
 }
+/* .item-1:hover {
+  /* hover:z-50 transition-[grid-template-rows,grid-template-columns] duration-2000 ease-in-out 
+  z-index: 50;
+  transition: grid-template-rows 2000ms ease-in;
+} */

@@ -1,4 +1,5 @@
 import Hero from "./components/Hero";
+import Portfolio from "./components/Portfolio";
 import SkillPage from "./components/SkillPage";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div className="font-Poppins">
       <Hero />
       <SkillPage />
+      <Portfolio />
     </div>
   );
 }

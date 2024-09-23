@@ -64,7 +64,7 @@ const DraggableIcon: React.FC<DraggableIconProps> = ({
 
   return (
     <div
-      className="draggable-icon"
+      className="draggable-icon flex flex-col items-center "
       style={{
         position: "absolute",
         left: `${position.x}px`,
