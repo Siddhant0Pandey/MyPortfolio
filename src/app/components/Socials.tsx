@@ -41,7 +41,7 @@ function Socials() {
       <ul className="flex items-center gap-2 socials">
         <li>
           <Link
-            href={"https://facebook.com"}
+            href={"https://www.facebook.com/sandesh.pandey.77398"}
             onMouseEnter={handleMouseEnter}
             target="_blank"
             rel="noopener noreferrer"
@@ -53,7 +53,7 @@ function Socials() {
         </li>
         <li>
           <Link
-            href={"https://github.com"}
+            href={"https://github.com/Siddhant0Pandey"}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -64,7 +64,7 @@ function Socials() {
         </li>
         <li>
           <Link
-            href={"https://instagram.com"}
+            href={"https://www.facebook.com/sandesh.pandey.77398"}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -75,7 +75,7 @@ function Socials() {
         </li>
         <li>
           <Link
-            href={"https://linkedin.com"}
+            href={"https://www.linkedin.com/in/siddhant-pandey-a7895b273/"}
             target="_blank"
             rel="noopener noreferrer"
           >
