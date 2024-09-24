@@ -4,14 +4,62 @@ function ProjectDescription({ description, name }) {
   return (
     <div className="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 translate-y-52 opacity-100 project_style_inner ">
       <svg
-        className="w-7 h-7 text-gray-600 dark:text-gray-400 mb-3"
-        aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 20 20"
+        viewBox="0 0 48 48"
+        width="20"
+        height="20"
+        id="browser"
       >
-        <path d="M18 5h-.7c.229-.467.349-.98.351-1.5a3.5 3.5 0 0 0-3.5-3.5c-1.717 0-3.215 1.2-4.331 2.481C8.4.842 6.949 0 5.5 0A3.5 3.5 0 0 0 2 3.5c.003.52.123 1.033.351 1.5H2a2 2 0 0 0-2 2v3a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a2 2 0 0 0-2-2ZM8.058 5H5.5a1.5 1.5 0 0 1 0-3c.9 0 2 .754 3.092 2.122-.219.337-.392.635-.534.878Zm6.1 0h-3.742c.933-1.368 2.371-3 3.739-3a1.5 1.5 0 0 1 0 3h.003ZM11 13H9v7h2v-7Zm-4 0H2v5a2 2 0 0 0 2 2h3v-7Zm6 0v7h3a2 2 0 0 0 2-2v-5h-5Z" />
+        <g>
+          <path
+            fill="none"
+            stroke="#000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M44 24A20 20 0 0 1 30.26 43a19.9 19.9 0 0 1-12.52 0 20 20 0 0 1 0-38A19.9 19.9 0 0 1 30.26 5 20 20 0 0 1 44 24zM30.26 43a20 20 0 0 0 0-38M17.74 5h0M17.74 43h0"
+          ></path>
+          <line
+            x1="24"
+            x2="24"
+            y1="5"
+            y2="43"
+            fill="none"
+            stroke="#000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          ></line>
+          <path
+            fill="none"
+            stroke="#000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8.78 11a33.13 33.13 0 0 0 5.82 2.28A33.41 33.41 0 0 0 24 14.64a33.47 33.47 0 0 0 9.15-1.28 34.09 34.09 0 0 0 6-2.37M9.11 37.35a33.69 33.69 0 0 1 5.72-2.19 33.74 33.74 0 0 1 24 2.22"
+          ></path>
+          <line
+            x1="5"
+            x2="43"
+            y1="24"
+            y2="24"
+            fill="none"
+            stroke="#000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          ></line>
+          <path
+            fill="none"
+            stroke="#000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M29.49 5l.16.28a36.83 36.83 0 0 1 0 37.26h0M18.25 5l-.16.28a36.79 36.79 0 0 0 .05 37.26h0"
+          ></path>
+        </g>
       </svg>
+
       <a href="#">
         <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {name}
@@ -24,7 +72,7 @@ function ProjectDescription({ description, name }) {
         href="#"
         className="inline-flex font-medium items-center text-blue-600 hover:underline"
       >
-        See our guideline
+        Visit the site
         <svg
           className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]"
           aria-hidden="true"

@@ -1,6 +1,7 @@
 import martheoMovieImg from "../../../../public/images/martheomovies.jpg";
 import tradingCourseImg from "../../../../public/images/Stock-Trading-Courses.png";
 import pokeSearchImg from "../../../../public/images/pokesearch.jpeg";
+import notepod from "../../../../public/images/notepod.png";
 
 interface ProjectItemProps {
   id: number;
@@ -12,6 +13,7 @@ interface ProjectItemProps {
     height: number;
   };
   description: string;
+  link: string;
 }
 
 export const projectItems: ProjectItemProps[] = [
@@ -26,7 +28,9 @@ export const projectItems: ProjectItemProps[] = [
     },
     description:
       "A recreation of the Disney+ streaming service. The clone includes a dynamic homepage, and a detailed view for each title.",
+    link: "https://martheomovies.vercel.app/",
   },
+
   {
     id: 2,
     name: "TradeAcademy",
@@ -38,6 +42,7 @@ export const projectItems: ProjectItemProps[] = [
     },
     description:
       "This site showcases a UI designed to explore and demonstrate the capabilities of the Next.js",
+    link: "https://tradingacademy.vercel.app/",
   },
   {
     id: 3,
@@ -50,6 +55,7 @@ export const projectItems: ProjectItemProps[] = [
     },
     description:
       "This site contains the name, image and type of the pokemon, it includes the search feature to search the pokemons. up",
+    link: "https://pokelist-search.vercel.app/",
   },
   {
     id: 4,
@@ -62,18 +68,20 @@ export const projectItems: ProjectItemProps[] = [
     },
     description:
       "A student information system that supports adding and deleting students, managing grades, attendance, and more for schools and colleges.",
+    link: "https://martheomovies.vercel.app/",
   },
   {
     id: 5,
-    name: "ClassManager",
+    name: "NotePod",
     image: {
-      src: martheoMovieImg.src,
+      src: notepod.src,
       alt: "Martheo Movies",
-      width: martheoMovieImg.width,
-      height: martheoMovieImg.height,
+      width: notepod.width,
+      height: notepod.height,
     },
     description:
-      "A student information system that supports adding and deleting students, managing grades, attendance, and more for schools and colleges.",
+      "Effortlessly create and delete notes with a clean, user-friendly interface. Keep your thoughts organized in one place!",
+    link: "https://note-pod.vercel.app/",
   },
   {
     id: 6,
@@ -86,7 +94,9 @@ export const projectItems: ProjectItemProps[] = [
     },
     description:
       "This site contains the name, image and type of the pokemon, it includes the search feature to search the pokemons. up",
+    link: "https://pokelist-search.vercel.app/",
   },
+
   {
     id: 7,
     name: "TradeAcademy",
@@ -98,6 +108,7 @@ export const projectItems: ProjectItemProps[] = [
     },
     description:
       "This site showcases a UI designed to explore and demonstrate the capabilities of the Next.js",
+    link: "https://tradingacademy.vercel.app/",
   },
   {
     id: 8,
@@ -110,5 +121,6 @@ export const projectItems: ProjectItemProps[] = [
     },
     description:
       "A recreation of the Disney+ streaming service. The clone includes a dynamic homepage, and a detailed view for each title.",
+    link: "https://martheomovies.vercel.app/",
   },
 ];

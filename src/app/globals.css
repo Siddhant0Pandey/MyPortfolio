@@ -169,3 +169,6 @@ li {
 .project_style:hover .project_style_description {
   opacity: 0.8;
 }
+.grid_item > div {
+  border: 1px solid var(--accent);
+}

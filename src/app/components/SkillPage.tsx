@@ -83,11 +83,11 @@ const DraggableIcon: React.FC<DraggableIconProps> = ({
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const FlexIcons: React.FC<{ icons: any[] }> = ({ icons }) => {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-16 p-2 ">
+    <div className="flex flex-wrap justify-center items-center gap-16 sm:gap-[16rem] p-2 pt-12 ">
       {icons.map((icon, index) => (
         <div
           key={index}
-          className="flex flex-col items-center  draggable-icon  "
+          className="flex flex-col items-center justify-center draggable-icon  "
         >
           {icon.component}
           <span className="mt-2">{icon.name}</span>
