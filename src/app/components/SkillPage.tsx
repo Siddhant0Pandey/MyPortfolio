@@ -60,7 +60,7 @@ const DraggableIcon: React.FC<DraggableIconProps> = ({
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, []);
+  }, [isDragging]);
 
   return (
     <div
@@ -97,6 +97,29 @@ const FlexIcons: React.FC<{ icons: any[] }> = ({ icons }) => {
   );
 };
 
+// Custom hook to handle client-side screen width
+const useScreenSize = () => {
+  const [screenWidth, setScreenWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Set screen size on client-side only
+    const updateScreenWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    // Set screen width on initial load
+    updateScreenWidth();
+
+    // Add event listener to track screen resizing
+    window.addEventListener("resize", updateScreenWidth);
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener("resize", updateScreenWidth);
+  }, []);
+
+  return screenWidth;
+};
+
 function SkillPage() {
   useGSAP(() => {
     gsap.fromTo(
@@ -113,23 +136,21 @@ function SkillPage() {
       }
     );
   }, []);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // Track if the component has mounted
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    if (typeof window !== "undefined") {
-      handleResize();
-      window.addEventListener("resize", handleResize);
-    }
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("resize", handleResize);
-      }
-    };
+    setHasMounted(true);
   }, []);
 
-  const isMobile = windowWidth <= 680;
-  const isTablet = windowWidth > 680 && windowWidth <= 756;
+  // Using custom hook to get screen size only on client-side
+  const screenWidth = useScreenSize();
+
+  // Set isMobile and isTablet based on screen width after render
+  const isMobile = screenWidth !== null && screenWidth <= 680;
+  const isTablet =
+    screenWidth !== null && screenWidth > 680 && screenWidth <= 756;
 
   const icons = [
     {
@@ -184,6 +205,11 @@ function SkillPage() {
       delay: 0.6,
     },
   ];
+
+  // If the component hasn't mounted, render nothing or a placeholder
+  if (!hasMounted) {
+    return null; // or return a loading spinner if you prefer
+  }
 
   return (
     <div className="h-[100vh] w-[100vw]">
