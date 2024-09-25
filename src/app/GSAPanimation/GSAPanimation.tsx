@@ -87,3 +87,27 @@ export const DivPortfolioGSAP2 = (ref: RefObject<HTMLElement>) => {
     }
   }, [ref]);
 };
+
+export const AboutCard = (ref: RefObject<HTMLElement>) => {
+  useGSAP(() => {
+    if (ref.current) {
+      gsap.fromTo(
+        ref.current,
+        { scale: 1.02 },
+
+        {
+          scrollTrigger: {
+            trigger: ref.current,
+            toggleActions: "restart none restart pause",
+            start: "-300px 70%",
+          },
+          scale: 1,
+          duration: 1,
+          yoyo: true,
+          ease: "power1.inOut",
+          repeat: -1,
+        }
+      );
+    }
+  }, [ref]);
+};

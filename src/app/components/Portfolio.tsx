@@ -21,8 +21,8 @@ function Portfolio() {
   DivPortfolioGSAP2(styleDivRef2);
 
   return (
-    <section className="h-screen">
-      <div className="container flex flex-col sm:pt-2 pt-16">
+    <section className="h-[120vh]">
+      <div className="container flex flex-col sm:pt-2 pt-[6rem]">
         <div className="overflow-hidden text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-center text-white lg:my-6 my-2">
           <div ref={introTextRef} className="portfoli_intro_text ">
             My <span className="text-accent">Portfolio</span>

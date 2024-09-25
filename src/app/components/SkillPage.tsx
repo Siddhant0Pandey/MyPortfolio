@@ -2,7 +2,7 @@
 import { FaCss3, FaHtml5, FaJs, FaReact } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript } from "react-icons/si";
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BubbleEffect from "../uiEffects/BubbleEffect";
@@ -10,117 +10,15 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface DraggableIconProps {
-  icon: ReactNode;
-  initialX: number;
-  initialY: number;
+interface IconProps {
+  component: React.ReactNode;
   name: string;
+  initialX: string;
+  initialY: string;
   delay: number;
 }
 
-const DraggableIcon: React.FC<DraggableIconProps> = ({
-  icon,
-  initialX,
-  initialY,
-  name,
-  delay,
-}) => {
-  const [position, setPosition] = useState({ x: initialX, y: initialY });
-  const [isDragging, setIsDragging] = useState(false);
-  const [offset, setOffset] = useState({ offsetX: 0, offsetY: 0 });
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setOffset({
-      offsetX: e.clientX - position.x,
-      offsetY: e.clientY - position.y,
-    });
-  };
-
-  const handleMouseMove = (e: MouseEvent) => {
-    if (isDragging) {
-      setPosition({
-        x: e.clientX - offset.offsetX,
-        y: e.clientY - offset.offsetY,
-      });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  useEffect(() => {
-    if (isDragging) {
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-    }
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [isDragging]);
-
-  return (
-    <div
-      className="draggable-icon flex flex-col items-center "
-      style={{
-        position: "absolute",
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        cursor: isDragging ? "grabbing" : "grab",
-        animationDelay: `${delay}s`,
-      }}
-      onMouseDown={handleMouseDown}
-      data-name={name}
-    >
-      {icon}
-    </div>
-  );
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const FlexIcons: React.FC<{ icons: any[] }> = ({ icons }) => {
-  return (
-    <div className="flex flex-wrap justify-center items-center gap-16 sm:gap-[16rem] p-2 pt-12 ">
-      {icons.map((icon, index) => (
-        <div
-          key={index}
-          className="flex flex-col items-center justify-center draggable-icon  "
-        >
-          {icon.component}
-          <span className="mt-2">{icon.name}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-// Custom hook to handle client-side screen width
-const useScreenSize = () => {
-  const [screenWidth, setScreenWidth] = useState<number | null>(null);
-
-  useEffect(() => {
-    // Set screen size on client-side only
-    const updateScreenWidth = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Set screen width on initial load
-    updateScreenWidth();
-
-    // Add event listener to track screen resizing
-    window.addEventListener("resize", updateScreenWidth);
-
-    // Clean up event listener on component unmount
-    return () => window.removeEventListener("resize", updateScreenWidth);
-  }, []);
-
-  return screenWidth;
-};
-
-function SkillPage() {
+const SkillPage = () => {
   useGSAP(() => {
     gsap.fromTo(
       ".skill_text",
@@ -135,116 +33,118 @@ function SkillPage() {
         duration: 1,
       }
     );
-  }, []);
+  });
 
-  // Track if the component has mounted
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
-  // Using custom hook to get screen size only on client-side
-  const screenWidth = useScreenSize();
-
-  // Set isMobile and isTablet based on screen width after render
-  const isMobile = screenWidth !== null && screenWidth <= 680;
-  const isTablet =
-    screenWidth !== null && screenWidth > 680 && screenWidth <= 756;
-
-  const icons = [
+  const icons: IconProps[] = [
     {
-      component: <FaReact fontSize={isMobile ? 60 : isTablet ? 80 : 99} />,
+      component: (
+        <FaReact className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+      ),
       name: "React",
-      initialX: isMobile ? 20 : isTablet ? 80 : 100,
-      initialY: isMobile ? 20 : isTablet ? 60 : 100,
+      initialX: "20%",
+      initialY: "20%",
       delay: 0,
     },
     {
-      component: <FaHtml5 fontSize={isMobile ? 60 : isTablet ? 80 : 99} />,
+      component: (
+        <FaHtml5 className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+      ),
       name: "HTML5",
-      initialX: isMobile ? 100 : isTablet ? 210 : 380,
-      initialY: isMobile ? 160 : isTablet ? 120 : 180,
+      initialX: "40%",
+      initialY: "30%",
       delay: 0.2,
     },
     {
-      component: <FaCss3 fontSize={isMobile ? 60 : isTablet ? 80 : 99} />,
+      component: (
+        <FaCss3 className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+      ),
       name: "CSS3",
-      initialX: isMobile ? 80 : isTablet ? 130 : 260,
-      initialY: isMobile ? 80 : isTablet ? 280 : 350,
-      delay: 0.5,
-    },
-    {
-      component: <FaJs fontSize={isMobile ? 60 : isTablet ? 80 : 99} />,
-      name: "JavaScript",
-      initialX: isMobile ? 50 : isTablet ? 280 : 670,
-      initialY: isMobile ? 220 : isTablet ? 260 : 110,
-      delay: 0.3,
-    },
-    {
-      component: <RiNextjsFill fontSize={isMobile ? 60 : isTablet ? 80 : 99} />,
-      name: "Next.js",
-      initialX: isMobile ? 70 : isTablet ? 360 : 899,
-      initialY: isMobile ? 150 : isTablet ? 170 : 160,
-      delay: 0.6,
-    },
-    {
-      component: <SiTypescript fontSize={isMobile ? 60 : isTablet ? 80 : 99} />,
-      name: "TypeScript",
-      initialX: isMobile ? 60 : isTablet ? 210 : 640,
-      initialY: isMobile ? 320 : isTablet ? 420 : 410,
-      delay: 0.3,
+      initialX: "85%",
+      initialY: "50%",
+      delay: 0.4,
     },
     {
       component: (
-        <RiTailwindCssFill fontSize={isMobile ? 60 : isTablet ? 80 : 99} />
+        <FaJs className="text-6xl sm:text-7xl lg:text-8x text-accent" />
+      ),
+      name: "JavaScript",
+      initialX: "20%",
+      initialY: "60%",
+      delay: 0.6,
+    },
+    {
+      component: (
+        <RiNextjsFill className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+      ),
+      name: "Next.js",
+      initialX: "70%",
+      initialY: "20%",
+      delay: 0.8,
+    },
+    {
+      component: (
+        <SiTypescript className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+      ),
+      name: "TypeScript",
+      initialX: "50%",
+      initialY: "70%",
+      delay: 1.0,
+    },
+    {
+      component: (
+        <RiTailwindCssFill className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
       ),
       name: "TailWindCSS",
-      initialX: isMobile ? 90 : isTablet ? 340 : 860,
-      initialY: isMobile ? 240 : isTablet ? 380 : 340,
-      delay: 0.6,
+      initialX: "70%",
+      initialY: "70%",
+      delay: 1.2,
     },
   ];
 
-  // If the component hasn't mounted, render nothing or a placeholder
   if (!hasMounted) {
-    return null; // or return a loading spinner if you prefer
+    return null;
   }
 
   return (
-    <div className="h-[100vh] w-[100vw]">
-      <div className="container h-full ">
+    <div className="h-[100vh] w-[100vw] pt-16 sm:my-6">
+      <div className="container h-full">
         <div className="overflow-hidden">
           <h1 className="skill_text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-center text-white lg:my-6 my-2">
             What <span className="text-accent">Powers</span> my{" "}
-            <span className="text-accent">Creation</span>!{" "}
+            <span className="text-accent">Creation</span>!
           </h1>
         </div>
 
-        <div className="border border-accent h-[80%] relative overflow-hidden ">
+        <div className="border border-accent h-[80%] relative overflow-hidden">
           <p className="opacity-35 absolute text-accent top-48 left-[-3.5rem] blink skill_p">
-            Draggable Icons ....
+            Powerful Technologies ...
           </p>
           <BubbleEffect />
 
-          {isMobile ? (
-            <FlexIcons icons={icons} />
-          ) : (
-            icons.map((icon, index) => (
-              <DraggableIcon
-                key={index}
-                icon={icon.component}
-                initialX={icon.initialX}
-                initialY={icon.initialY}
-                name={icon.name}
-                delay={icon.delay}
-              />
-            ))
-          )}
+          {icons.map((icon, index) => (
+            <div
+              key={index}
+              className="absolute flex flex-col items-center draggable-icon"
+              style={{
+                left: icon.initialX,
+                top: icon.initialY,
+                animationDelay: `${icon.delay}s`,
+              }}
+            >
+              {icon.component}
+              <span className="mt-2 text-accent">{icon.name}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default SkillPage;

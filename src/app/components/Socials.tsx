@@ -57,7 +57,7 @@ function Socials() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="p-4 hover:text-[#8b6767]">
+            <div className="p-4 hover:text-[#685252]">
               <FontAwesomeIcon icon={faGithub} fontSize={22} />
             </div>
           </Link>
