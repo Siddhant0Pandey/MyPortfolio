@@ -36,7 +36,7 @@ function About() {
           >
             <SkillStylishEffect />
           </div>
-          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
+          <div className="w-full lg:w-1/2 flex flex-col  lg:items-start sm:items-center md:items-center text-center lg:text-start">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-6">
               A <span className="text-accent">Frontend</span> Developer
             </h2>
@@ -56,11 +56,13 @@ function About() {
               </p>
             </div>
 
-            <div className="text-center lg:text-left">
+            <div className="flex flex-col items-center">
               <h3 className="text-2xl font-semibold text-white mb-4">
-                My <span className="text-accent">Tech Stack</span>
+                My <span className="text-accent ">Tech Stack</span>
               </h3>
-              <SkillIcon />
+              <div>
+                <SkillIcon />
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import martheoMovieImg from "../../../../public/images/martheomovies.jpg";
 import tradingCourseImg from "../../../../public/images/Stock-Trading-Courses.png";
-import pokeSearchImg from "../../../../public/images/pokesearch.jpeg";
+import pokeSearchImg from "../../../../public/images/pokesearch.png";
 import notepod from "../../../../public/images/notepod.png";
 
 export interface ProjectItemProps {

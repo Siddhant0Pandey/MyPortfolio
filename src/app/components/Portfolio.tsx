@@ -19,6 +19,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, isLargeScreen }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
+  const hoveredCardRef = useRef(null); // Reference for hoveredcard
 
   useGSAP(() => {
     if (cardRef.current) {
@@ -39,12 +40,24 @@ const ProjectCard = ({ project, isLargeScreen }: ProjectCardProps) => {
         }
       );
     }
-  }, []);
+
+    if (hoveredCardRef.current) {
+      gsap.fromTo(
+        hoveredCardRef.current,
+        { y: 220 },
+        {
+          y: isHovered ? 0 : 220,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
+    }
+  }, [isHovered]);
 
   return (
     <div
       ref={cardRef}
-      className="relative overflow-hidden rounded-lg shadow-lg border border-accent p-2"
+      className="parent_project_hover relative overflow-hidden rounded-lg shadow-lg border border-accent p-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -59,14 +72,17 @@ const ProjectCard = ({ project, isLargeScreen }: ProjectCardProps) => {
         <h3 className="text-xl font-bold text-accent">{project.name}</h3>
       </div>
       {(isHovered || !isLargeScreen) && (
-        <div className="absolute inset-0 bg-black bg-opacity-75 flex flex-col justify-center items-center p-4 text-white transition-opacity duration-300">
+        <div
+          ref={hoveredCardRef} // Assign reference
+          className="hoveredcard absolute inset-0 bg-black bg-opacity-65 flex flex-col justify-center items-center p-4 "
+        >
           <h3 className="text-xl font-bold mb-2">{project.name}</h3>
           <p className="text-sm mb-4">{project.description}</p>
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-white px-4 py-2 rounded hover:bg-opacity-80 transition-colors"
+            className="bg-accent text-white px-4 py-2 rounded hover:bg-opacity-80 hover:scale-95 transition-colors "
           >
             View Project
           </a>

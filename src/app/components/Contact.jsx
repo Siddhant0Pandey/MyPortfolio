@@ -13,7 +13,7 @@ function Contact() {
 
         <div className="grid grid-cols-1 gap-12 pt-16 md:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col items-center">
-            <span className="inline-block p-3 text-accent rounded-full bg-white dark:bg-gray-800">
+            <span className="inline-block p-3 text-accent rounded-full bg-white dark:bg-gray-800 hover:scale-105">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -42,7 +42,7 @@ function Contact() {
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="inline-block p-3 text-accent rounded-full bg-white dark:bg-gray-800">
+            <span className="inline-block p-3 text-accent rounded-full bg-white dark:bg-gray-800 hover:scale-105">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -74,7 +74,7 @@ function Contact() {
           </div>
 
           <div className="flex flex-col items-center">
-            <span className="inline-block p-3 text-accent rounded-full bg-white  dark:bg-gray-800">
+            <span className="inline-block p-3 text-accent rounded-full bg-white  dark:bg-gray-800 hover:scale-105 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
