@@ -9,8 +9,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 import { projectItems } from "./projects/project";
 import Image from "next/image";
+import { ProjectItemProps } from "./projects/project";
 
-const ProjectCard = ({ project, isLargeScreen }) => {
+interface ProjectCardProps {
+  project: ProjectItemProps;
+  isLargeScreen: boolean;
+}
+
+const ProjectCard = ({ project, isLargeScreen }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
 
