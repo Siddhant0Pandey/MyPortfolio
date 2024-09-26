@@ -31,7 +31,7 @@ export const usePortfolioGSAP = (ref: RefObject<HTMLElement>) => {
             toggleActions: "restart none restart pause",
             start: "-300px 70%",
           },
-          scale: 1.1,
+
           delay: 1,
           yoyo: true,
         }

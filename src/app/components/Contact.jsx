@@ -67,7 +67,7 @@ function Contact() {
             <h2 className="mt-4 text-lg font-medium text-accent dark:text-white">
               Get connected
             </h2>
-            <p className="mt-2 text-gray-500 dark:text-gray-400">say hello</p>
+            <p className="mt-2 text-gray-500 dark:text-gray-400">Namaste!</p>
             <p className="mt-2 text-accent dark:text-blue-400">
               Kathmandu, Nepal
             </p>
@@ -94,9 +94,7 @@ function Contact() {
             <h2 className="mt-4 text-lg font-medium text-accent dark:text-white">
               Phone
             </h2>
-            <p className="mt-2 text-gray-500 dark:text-gray-400">
-              Mon-Fri from 8am to 5pm.
-            </p>
+            <p className="mt-2 text-gray-500 dark:text-gray-400">say hello</p>
             <p className="mt-2 text-accent dark:text-blue-400">
               +977 9860801266
             </p>

@@ -12,10 +12,14 @@
 } */
 
 /* for all social containers*/
+:root {
+  --accent: #1cd673;
+}
+
 .socialContainer {
   width: 54px;
   height: 54px;
-  background-color: #e53170;
+  background-color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;

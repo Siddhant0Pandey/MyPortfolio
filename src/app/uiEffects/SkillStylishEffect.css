@@ -1,4 +1,8 @@
 /* From Uiverse.io by MikeAndrewDesigner */
+:root {
+  --accent: #1cd673;
+}
+
 .e-card {
   margin: 100px auto;
   background: transparent;
@@ -19,7 +23,7 @@
   top: 0;
   margin-left: -50%;
   margin-top: -70%;
-  background: linear-gradient(744deg, #e53170, #c33bd0 60%, #c84832);
+  background: linear-gradient(744deg, var(--accent), #7cc9a5 60%, #64ba89);
 }
 
 .icon {

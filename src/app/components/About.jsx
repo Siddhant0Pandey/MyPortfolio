@@ -11,70 +11,64 @@ function About() {
   AboutCard(cardAnimate);
 
   return (
-    <section className="h-[100vh] w-[100vw] sm:my-4 my-16">
-      <div className="container flex flex-col">
-        <div className="overflow-hidden">
+    <section className="min-h-screen w-full py-16 bg-background">
+      <div className="container mx-auto px-4 flex flex-col items-center">
+        <div className="overflow-hidden mb-8">
           <h1
             ref={textOnScroll}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-center text-white lg:my-6 my-2"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold  text-center text-white"
           >
-            <span className="text-accent">A</span>bout
+            About <span className="text-accent">Me</span>
           </h1>
         </div>
 
-        <h3 className="text-center  text-sm font-light sm:text-base md:text-lg lg:text-xl px-2 sm:px-4 md:px-6 lg:px-8 py-1 sm:py-2 ">
+        <p className="text-center text-gray-300 text-lg sm:text-xl md:text-2xl max-w-3xl mb-12">
           Frontend Developer with expertise in React, JavaScript, HTML, and CSS,
           focused on building responsive, user-friendly web applications.
           Passionate about creating clean, efficient code and continuously
           learning new technologies.
-        </h3>
+        </p>
 
-        <div className="flex sm:gap-6 gap-10 pt-10 sm:pt-6 items-center justify-center   ">
-          <div ref={cardAnimate} className="hover:scale-95">
+        <div className="flex flex-col lg:flex-row gap-12 items-center justify-center w-full">
+          <div
+            ref={cardAnimate}
+            className="w-full max-w-md lg:w-1/2 transition-transform duration-300 hover:scale-105"
+          >
             <SkillStylishEffect />
           </div>
-          <div>
-            <div className="flex flex-col ">
-              <div className="overflow-hidden ">
-                <h2 className="text-large sm:text-2xl md:text-3xl tracking-wide text-center text-white ">
-                  A <span className="text-accent">Front</span>end{" "}
-                  <span className="text-accent">Dev</span>eloper
-                </h2>
-              </div>
+          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-6">
+              A <span className="text-accent">Frontend</span> Developer
+            </h2>
 
-              {/* <p className="text-center text-white pb-6">
-                {" "}
-                Experienced in creating dynamic, responsive web applications
-                with a passion for clean code and problem-solving.
-              </p> */}
-
-              <div className="text-center p-3 text-xl flex flex-col gap-4 ">
-                <h3>
-                  <span className="text-accent">Name</span> : Siddhant Pandey
-                </h3>
-                <h3>
-                  <span className="text-accent">Address</span> : Kathmandu,
-                  Nepal
-                </h3>
-                <h3>
-                  <span className="text-accent">Phone no</span> : +977
-                  9860801266
-                </h3>
-              </div>
+            <div className="text-gray-300 text-lg sm:text-xl space-y-4 mb-8">
+              <p>
+                <span className="text-accent font-semibold">Name:</span>{" "}
+                Siddhant Pandey
+              </p>
+              <p>
+                <span className="text-accent font-semibold">Address:</span>{" "}
+                Kathmandu, Nepal
+              </p>
+              <p>
+                <span className="text-accent font-semibold">Phone:</span> +977
+                9860801266
+              </p>
             </div>
-            <div className="text-center flex flex-col items-center">
-              <h5 className="py-4 ">
-                about my <span className="text-accent">techstack</span>{" "}
-              </h5>
+
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl font-semibold text-white mb-4">
+                My <span className="text-accent">Tech Stack</span>
+              </h3>
               <SkillIcon />
             </div>
           </div>
         </div>
 
-        <h3 className="text-center  text-sm font-light sm:text-base md:text-lg lg:text-xl px-2 sm:px-4 md:px-6 lg:px-8 py-1 sm:py-2 ">
-          &quot; Push the boundaries of web design and development, craft the
-          digital solutions that leave a lasting impression &quot;
-        </h3>
+        <blockquote className="text-center text-gray-300 text-xl sm:text-2xl italic mt-16 max-w-3xl">
+          &ldquo;Push the boundaries of web design and development, craft the
+          digital solutions that leave a lasting impression.&rdquo;
+        </blockquote>
       </div>
     </section>
   );

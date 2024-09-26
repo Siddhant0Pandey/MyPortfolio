@@ -24,7 +24,7 @@ function NavBarSection() {
       <div className="flex flex-col items-center gap-7 ">
         <Link href={"/"} onMouseEnter={handleMouseEnter}>
           <div className="flex flex-row-reverse items-center link_detail">
-            <div className=" p-4 bg-[#e53170] rounded-full">
+            <div className=" p-4 bg-accent rounded-full">
               <FontAwesomeIcon icon={faHouse} fontSize={22} color="#ffffff" />
             </div>
           </div>

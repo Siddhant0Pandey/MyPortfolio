@@ -9,7 +9,11 @@
   --foreground: #ffffff;
 
   /* --accent: #5fdd9d; */
-  --accent: #e53170;
+  /* --accent: #e53170; */
+  /* --accent: #8fd61c; */
+  --accent: #1cd673;
+  /* --accent: #d75ced; */
+  /* --accent: #5cbfed; */
 }
 
 .container {

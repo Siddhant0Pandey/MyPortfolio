@@ -1,3 +1,7 @@
+:root {
+  --accent: #1cd673;
+}
+
 .wrapper {
   height: 100%;
   width: 100%;
@@ -9,7 +13,7 @@
   height: 60px;
   width: 60px;
   /* border: 2px solid rgba(255, 255, 255, 0.7); */
-  border: 2px solid #e53170;
+  border: 2px solid var(--accent);
   border-radius: 50px;
   position: absolute;
   animation: 4s linear infinite;
@@ -19,7 +23,7 @@
   height: 10px;
   width: 10px;
   border-radius: 50px;
-  background: #db4d7e;
+  background: var(--accent);
   position: absolute;
   top: 20%;
   right: 20%;

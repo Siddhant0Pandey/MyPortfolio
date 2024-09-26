@@ -44,7 +44,7 @@ const SkillPage = () => {
   const icons: IconProps[] = [
     {
       component: (
-        <FaReact className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+        <FaReact className="text-4xl sm:text-5xl lg:text-6xl text-accent" />
       ),
       name: "React",
       initialX: "20%",
@@ -53,7 +53,7 @@ const SkillPage = () => {
     },
     {
       component: (
-        <FaHtml5 className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+        <FaHtml5 className="text-4xl sm:text-5xl lg:text-6xl text-accent" />
       ),
       name: "HTML5",
       initialX: "40%",
@@ -62,7 +62,7 @@ const SkillPage = () => {
     },
     {
       component: (
-        <FaCss3 className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+        <FaCss3 className="text-4xl sm:text-5xl lg:text-6xl text-accent" />
       ),
       name: "CSS3",
       initialX: "85%",
@@ -71,7 +71,7 @@ const SkillPage = () => {
     },
     {
       component: (
-        <FaJs className="text-6xl sm:text-7xl lg:text-8x text-accent" />
+        <FaJs className="text-4xl sm:text-5xl lg:text-6xl text-accent" />
       ),
       name: "JavaScript",
       initialX: "20%",
@@ -80,7 +80,7 @@ const SkillPage = () => {
     },
     {
       component: (
-        <RiNextjsFill className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+        <RiNextjsFill className="text-4xl sm:text-5xl lg:text-6xl text-accent" />
       ),
       name: "Next.js",
       initialX: "70%",
@@ -89,7 +89,7 @@ const SkillPage = () => {
     },
     {
       component: (
-        <SiTypescript className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+        <SiTypescript className="text-4xl sm:text-5xl lg:text-6xl text-accent" />
       ),
       name: "TypeScript",
       initialX: "50%",
@@ -98,11 +98,11 @@ const SkillPage = () => {
     },
     {
       component: (
-        <RiTailwindCssFill className="text-6xl sm:text-7xl lg:text-8xl text-accent" />
+        <RiTailwindCssFill className="text-4xl sm:text-5xl lg:text-6xl text-accent" />
       ),
       name: "TailWindCSS",
       initialX: "70%",
-      initialY: "70%",
+      initialY: "65%",
       delay: 1.2,
     },
   ];
@@ -112,35 +112,49 @@ const SkillPage = () => {
   }
 
   return (
-    <div className="h-[100vh] w-[100vw] pt-16 sm:my-6">
-      <div className="container h-full">
-        <div className="overflow-hidden">
-          <h1 className="skill_text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-center text-white lg:my-6 my-2">
+    <div className="min-h-screen w-full py-16">
+      <div className="container mx-auto px-4">
+        <div className="overflow-hidden mb-8">
+          <h1 className="skill_text text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide text-center text-white">
             What <span className="text-accent">Powers</span> my{" "}
             <span className="text-accent">Creation</span>!
           </h1>
         </div>
 
-        <div className="border border-accent h-[80%] relative overflow-hidden">
-          <p className="opacity-35 absolute text-accent top-48 left-[-3.5rem] blink skill_p">
+        <div className="border border-accent min-h-[60vh] relative overflow-hidden">
+          <p className="opacity-35 absolute text-accent top-48 left-[-3.5rem] blink skill_p hidden md:block">
             Powerful Technologies ...
           </p>
           <BubbleEffect />
 
-          {icons.map((icon, index) => (
-            <div
-              key={index}
-              className="absolute flex flex-col items-center draggable-icon"
-              style={{
-                left: icon.initialX,
-                top: icon.initialY,
-                animationDelay: `${icon.delay}s`,
-              }}
-            >
-              {icon.component}
-              <span className="mt-2 text-accent">{icon.name}</span>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 gap-8 p-8 md:hidden">
+            {icons.map((icon, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center"
+              >
+                {icon.component}
+                <span className="mt-2 text-accent text-sm">{icon.name}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden md:block">
+            {icons.map((icon, index) => (
+              <div
+                key={index}
+                className="absolute flex flex-col items-center draggable-icon"
+                style={{
+                  left: icon.initialX,
+                  top: icon.initialY,
+                  animationDelay: `${icon.delay}s`,
+                }}
+              >
+                {icon.component}
+                <span className="mt-2 text-accent">{icon.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
