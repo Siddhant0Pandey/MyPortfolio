@@ -77,7 +77,7 @@ function NavBarSection() {
     <nav className="fixed right-2 top-[20%] ">
       <div className="flex flex-col items-center gap-7">
         <div
-          className="md:hidden text-accent absolute bottom-16 right-4 z-50"
+          className="md:hidden text-accent absolute bottom-[5rem] right-4 z-50"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           <FontAwesomeIcon icon={isSidebarOpen ? faTimes : faBars} size="2x" />
@@ -105,9 +105,9 @@ function NavBarSection() {
                 }}
                 className={`transition-colors duration-300 ${getLinkStyle(
                   link.href
-                )} link_detail`}
+                )} link_detail z-[99]`}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 z-[99]">
                   <div className={`p-4 rounded-lg ${getLinkStyle(link.href)}`}>
                     <FontAwesomeIcon
                       icon={link.icon}
