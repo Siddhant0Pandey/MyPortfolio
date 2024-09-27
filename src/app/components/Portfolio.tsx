@@ -73,7 +73,7 @@ const ProjectCard = ({ project, isLargeScreen }: ProjectCardProps) => {
       </div>
       {(isHovered || !isLargeScreen) && (
         <div
-          ref={hoveredCardRef} // Assign reference
+          ref={hoveredCardRef}
           className="hoveredcard absolute inset-0 bg-black bg-opacity-65 flex flex-col justify-center items-center p-4 "
         >
           <h3 className="text-xl font-bold mb-2">{project.name}</h3>

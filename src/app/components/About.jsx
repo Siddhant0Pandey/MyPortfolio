@@ -11,9 +11,9 @@ function About() {
   AboutCard(cardAnimate);
 
   return (
-    <section className="min-h-screen w-full py-16 bg-background">
-      <div className="container mx-auto px-4 flex flex-col items-center">
-        <div className="overflow-hidden mb-8">
+    <section className="min-h-screen w-full py-16 bg-background ">
+      <div className="container mx-auto px-4 flex flex-col items-center ">
+        <div className="overflow-hidden mb-8 ">
           <h1
             ref={textOnScroll}
             className="text-3xl sm:text-4xl md:text-5xl font-bold  text-center text-white"

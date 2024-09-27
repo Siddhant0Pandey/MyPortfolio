@@ -68,25 +68,28 @@ function NavBarSection() {
     { href: "#contact", icon: faMessage, tooltip: "Contact" },
   ];
 
-  const getActiveTooltip = () => {
-    const activeLink = links.find((link) => isActive(link.href));
-    return activeLink ? activeLink.tooltip : "";
-  };
+  // const getActiveTooltip = () => {
+  //   const activeLink = links.find((link) => isActive(link.href));
+  //   return activeLink ? activeLink.tooltip : "";
+  // };
 
   return (
-    <nav className="fixed right-2 top-[20%] ">
-      <div className="flex flex-col items-center gap-7">
+    <nav className="fixed right-3 top-[20%] ">
+      <div className=" flex flex-col items-center gap-7">
         <div
-          className="md:hidden text-accent absolute bottom-[5rem] right-4 z-50"
+          className="md:hidden text-white absolute bottom-[5rem] right-[84vw] rounded-md z-50 bg-accent  p-2 text-center "
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
-          <FontAwesomeIcon icon={isSidebarOpen ? faTimes : faBars} size="2x" />
+          <FontAwesomeIcon
+            icon={isSidebarOpen ? faTimes : faBars}
+            fontSize={22}
+          />
         </div>
 
         {/* Sidebar */}
         {isSidebarOpen && (
-          <div className="fixed top-0 right-0 bg-accent h-full w-1/2 shadow-lg z-[99] flex flex-col items-start text-left p-4">
-            <div className="text-white text-lg mb-4">{getActiveTooltip()}</div>
+          <div className="fixed top-0 right-0 bg-accent h-full w-1/2 shadow-lg  flex flex-col gap-6 items-start text-left p-4 z-50">
+            {/* <div className="text-white text-lg mb-4 ">{getActiveTooltip()}</div> */}
             {links.map((link, index) => (
               <Link
                 key={index}
@@ -103,19 +106,23 @@ function NavBarSection() {
                     }
                   }
                 }}
-                className={`transition-colors duration-300 ${getLinkStyle(
+                className={`transition-colors duration-300 z-[99] w-full ${getLinkStyle(
                   link.href
-                )} link_detail z-[99]`}
+                )} ${getIconColor(link.href)} link_detail z-[99]`}
               >
                 <div className="flex items-center gap-2 z-[99]">
-                  <div className={`p-4 rounded-lg ${getLinkStyle(link.href)}`}>
+                  <div
+                    className={`p-4 rounded-lg w-full ${getLinkStyle(
+                      link.href
+                    )} ${getIconColor(link.href)}`}
+                  >
                     <FontAwesomeIcon
                       icon={link.icon}
                       fontSize={22}
                       color={getIconColor(link.href)}
                     />
                   </div>
-                  <div className={`${getIconColor(link.href)}`}>
+                  <div className={`${getIconColor(link.href)} `}>
                     {link.tooltip}
                   </div>
                 </div>
@@ -140,11 +147,11 @@ function NavBarSection() {
                   }
                 }
               }}
-              className={`transition-colors duration-300 ${getLinkStyle(
+              className={`transition-colors duration-300 rounded-md  ${getLinkStyle(
                 link.href
               )} link_detail`}
             >
-              <div className={`p-4 rounded-full ${getLinkStyle(link.href)}`}>
+              <div className={`p-3 icon_round ${getLinkStyle(link.href)}`}>
                 <FontAwesomeIcon
                   icon={link.icon}
                   fontSize={22}

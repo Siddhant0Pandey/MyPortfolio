@@ -121,9 +121,9 @@ const SkillPage = () => {
           </h1>
         </div>
 
-        <div className="border border-accent min-h-[60vh] relative overflow-hidden">
+        <div className="border border-accent min-h-[60vh] relative overflow-hidden -z-10">
           <p className="opacity-35 absolute text-accent top-48 left-[-3.5rem] blink skill_p hidden md:block">
-            Powerful Technologies ...
+            My Techstacks ...
           </p>
           <BubbleEffect />
 
