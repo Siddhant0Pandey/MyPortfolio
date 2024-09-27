@@ -25,6 +25,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -40,19 +41,42 @@ body {
 .link_detail::before {
   background-color: var(--accent);
   font-size: 17px;
-  padding: 1rem 0rem 1rem 0rem;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   position: absolute;
   right: 2rem;
   z-index: -1;
+  content: "";
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.4s ease-in-out;
 }
 
 .link_detail:hover::before {
-  animation: expand 0.4s ease-in-out forwards;
-  content: "Home";
+  opacity: 1;
+  transform: translateY(0px);
 }
 
+.link_detail .tooltip-text {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 115%;
+  /* background-color: var(--accent);
+  color: white; */
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  transform: translateY(40px);
+  transition: transform 0.6s ease-in-out;
+}
+
+.link_detail:hover .tooltip-text {
+  opacity: 1;
+  transform: translateY(0px);
+}
 @keyframes expand {
   from {
     padding: 1rem 0rem 1rem 0rem;
