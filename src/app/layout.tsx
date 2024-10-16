@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
-import NavBarSection from "./components/NavBarSection";
+// import NavBarSection from "./components/NavBarSection";
 import FontAwesomeConfig from "./fontawesome";
 
 // const geistSans = localFont({
@@ -30,10 +30,7 @@ export default function RootLayout({
       <head>
         <FontAwesomeConfig />
       </head>
-      <body>
-        <NavBarSection />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

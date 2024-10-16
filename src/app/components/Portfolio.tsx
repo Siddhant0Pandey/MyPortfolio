@@ -66,7 +66,7 @@ const ProjectCard = ({ project, isLargeScreen }: ProjectCardProps) => {
         alt={project.image.alt || project.name}
         width={project.image.width}
         height={project.image.height}
-        className="w-full h-64 object-cover opacity-80"
+        className="w-full h-64 object-cover opacity-80 -z-50"
       />
       <div className="absolute bottom-0 left-0 right-0 bg-background bg-opacity-75 text-white p-2">
         <h3 className="text-xl font-bold text-accent">{project.name}</h3>
@@ -74,9 +74,9 @@ const ProjectCard = ({ project, isLargeScreen }: ProjectCardProps) => {
       {(isHovered || !isLargeScreen) && (
         <div
           ref={hoveredCardRef}
-          className="hoveredcard absolute inset-0 bg-black bg-opacity-65 flex flex-col justify-center items-center p-4 "
+          className="hoveredcard absolute inset-0 bg-black bg-opacity-65 flex flex-col justify-center items-center p-4 -translate-y-[5rem] "
         >
-          <h3 className="text-xl font-bold mb-2">{project.name}</h3>
+          <h3 className="text-xl font-bold  ">{project.name}</h3>
           <p className="text-sm mb-4">{project.description}</p>
           <a
             href={project.link}
@@ -104,7 +104,7 @@ const Portfolio = () => {
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
+  }, [isLargeScreen]);
 
   useGSAP(() => {
     if (introTextRef.current) {
@@ -127,8 +127,8 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="lg:h-screen md:h-screen sm:h-[50vh] bg-background py-16">
-      <div className="container mx-auto px-4">
+    <section className="lg:h-screen md:h-screen sm:h-[50vh] bg-background py-16 ">
+      <div className="container mx-auto px-4 ">
         <div className="overflow-hidden text-4xl font-bold tracking-wide text-center text-white mb-12">
           <div ref={introTextRef}>
             My <span className="text-accent">Portfolio</span>
@@ -153,13 +153,13 @@ const Portfolio = () => {
             />
             <button
               onClick={prevProject}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-accent bg-opacity-50 text-white p-2 rounded-r"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-accent bg-opacity-50 text-white p-2 rounded-l"
             >
               &lt;
             </button>
             <button
               onClick={nextProject}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-accent bg-opacity-50 text-white p-2 rounded-l"
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-accent bg-opacity-50 text-white p-2 rounded-r"
             >
               &gt;
             </button>

@@ -88,7 +88,7 @@ function NavBarSection() {
 
         {/* Sidebar */}
         {isSidebarOpen && (
-          <div className="fixed top-0 right-0 bg-accent h-full w-1/2 shadow-lg  flex flex-col gap-6 items-start text-left p-4 z-50">
+          <div className="fixed top-0 right-0 bg-accent h-full w-1/2 shadow-lg  flex flex-col gap-6 items-start text-left p-4 z-[999]">
             {/* <div className="text-white text-lg mb-4 ">{getActiveTooltip()}</div> */}
             {links.map((link, index) => (
               <Link

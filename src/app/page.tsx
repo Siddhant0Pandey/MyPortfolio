@@ -3,10 +3,14 @@ import Portfolio from "./components/Portfolio";
 import SkillPage from "./components/SkillPage";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import NavBarSection from "./components/NavBarSection";
 
 export default function Home() {
   return (
     <div className="font-Poppins scroll-smooth focus:scroll-auto">
+      <div className="z-50">
+        <NavBarSection />
+      </div>
       <div id="home">
         <Hero />
       </div>

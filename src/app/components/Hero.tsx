@@ -97,8 +97,8 @@ function Hero() {
   );
 
   return (
-    <section ref={container}>
-      <div className="container min-h-screen flex flex-col items-center justify-center font-Poppins px-4 sm:px-6 lg:px-8">
+    <section ref={container} className="z-10">
+      <div className="container relative min-h-screen flex flex-col items-center justify-center font-Poppins px-4 sm:px-6 lg:px-8 z-10">
         <div>
           <div className="overflow-hidden">
             <h3 className="text-center text-xl sm:text-2xl md:text-3xl leading-4 sm:leading-6 font-medium intro">
