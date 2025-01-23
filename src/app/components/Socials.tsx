@@ -64,7 +64,7 @@ function Socials() {
         </li>
         <li>
           <Link
-            href={"https://www.facebook.com/sandesh.pandey.77398"}
+            href={"https://www.instagram.com/siddhant_pandey.22/"}
             target="_blank"
             rel="noopener noreferrer"
           >

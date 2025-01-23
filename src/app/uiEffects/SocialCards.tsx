@@ -6,7 +6,7 @@ function SocialCards() {
     /* From Uiverse.io by vinodjangid07 */
     <div className="card flex items-center gap-4">
       <a
-        href="https://www.facebook.com/sandesh.pandey.77398"
+        href="https://www.instagram.com/siddhant_pandey.22/"
         className="socialContainer containerOne"
       >
         <svg className="socialSvg instagramSvg" viewBox="0 0 16 16">
